@@ -31,7 +31,7 @@ if($_POST){
                     <div class="home-map fl-wrap">
                         <!-- Map -->
                         <div class="map-container fw-map">
-                            <div id="map-main">
+                            <div id="map-main" style="display: none;">
                             </div>
                         </div>
                         <input type="hidden" name="lat" id="lat">
@@ -39,18 +39,20 @@ if($_POST){
                         <input type="hidden" name="location" id="location">
 
                         <!-- Map end -->
-                        <div class="absolute-main-search-input">
+                        <!--<div class="absolute-main-search-input">-->
                             <div class="container">
                                 <div class="main-search-input fl-wrap" >
                                     
                                     <div class="main-search-input-item location" id="autocomplete-container" style="width:100%">
-                                        <input type="text" placeholder="Location" id="autocomplete" value=""/>
+                                        <input type="text" placeholder="Location" id="autocomplete" value=""
+                                               style="border: 1px solid gray;border-radius: 0;"/>
+                                        
                                         <a href="#"><i class="fa fa-dot-circle-o"></i></a>
                                     </div>
-                                    <button class="main-search-button" id="btn-main" >Back</button>
+                                    <button class="main-search-button" id="btn-main" >Post</button>
                                 </div>
                             </div>
-                        </div>
+                        <!--</div>-->
                         <!-- home-map end-->
                     </div>
                     <!-- section end -->

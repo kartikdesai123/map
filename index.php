@@ -112,8 +112,17 @@ if($_POST){
             <a class="to-top"><i class="fa fa-angle-up"></i></a>
         </div>
         <!-- Main end -->
-        <?php
+        
+    </body>
+    <script>
+    var lat1 = "<?php echo (@$_COOKIE['post_latitude']) ? $_COOKIE['post_latitude'] : '';?>";
+    var lat2 = "<?php echo (@$_COOKIE['sec_latitude']) ? $_COOKIE['sec_latitude'] : '';?>";
+    var lng1 = "<?php echo (@$_COOKIE['post_longitude']) ? $_COOKIE['post_longitude'] : '';?>";
+    var lng2 = "<?php echo (@$_COOKIE['sec_longitude']) ? $_COOKIE['sec_longitude'] : '';?>";
+    var add1 = "<?php echo (@$_COOKIE['post_item_Location']) ? $_COOKIE['post_item_Location'] : '';?>";
+    var add2 = "<?php echo (@$_COOKIE['sec_item_Location']) ? $_COOKIE['sec_item_Location'] : '';?>";
+    </script>
+    <?php
             include('include/footer.php');
         ?>
-    </body>
 </html>
