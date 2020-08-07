@@ -1,20 +1,11 @@
 <?php
 if($_POST){
-    setcookie("sec_latitude", $_POST['latitude'], time() + (86400 * 30), "/");
-    setcookie("sec_longitude",  $_POST['longitude'], time() + (86400 * 30), "/");
-    setcookie("sec_item_Location", $_POST['item_Location'], time() + (86400 * 30), "/");
-}else{
-
-    setcookie("sec_latitude","",time() - 3600);
-    setcookie("sec_longitude",  "",time() - 3600);
-    setcookie("sec_item_Location", "",time() - 3600);
-
-    setcookie("post_latitude","",time() - 3600);
-    setcookie("post_longitude",  "",time() - 3600);
-    setcookie("post_item_Location", "",time() - 3600);
-
+    setcookie("post_latitude", $_POST['latitude'], time() + (86400 * 30), "/");
+    setcookie("post_longitude",  $_POST['longitude'], time() + (86400 * 30), "/");
+    setcookie("post_item_Location", $_POST['item_Location'], time() + (86400 * 30), "/");
 }
 ?>
+
 <!DOCTYPE HTML>
 <html lang="en">
     <?php
@@ -56,7 +47,7 @@ if($_POST){
                                         <input type="text" placeholder="Location" id="autocomplete" value=""/>
                                         <a href="#"><i class="fa fa-dot-circle-o"></i></a>
                                     </div>
-                                    <button class="main-search-button" id="btn-post" >Post</button>
+                                    <button class="main-search-button" id="btn-main" >Back</button>
                                 </div>
                             </div>
                         </div>
@@ -69,9 +60,8 @@ if($_POST){
             </div>
             <!-- wrapper end -->
 
-            <!--section -->
             <?php 
-                if(isset($_COOKIE['post_latitude'])){?>
+                if($_COOKIE['post_latitude']){?>
                     <section id="sec2">
                         <div class="container">
                             <div class="section-title">
@@ -87,25 +77,7 @@ if($_POST){
                         </div>
                     </section>
                 <?php } ?>
-            <?php 
-                if(isset($_COOKIE['sec_latitude'])){?>
-                <section id="sec2">
-                    <div class="container">
-                        <div class="section-title">
-                            <h2>Second Page Post</h2>
-                            <div class="section-subtitle">Second Page Post</div>
-                            <span class="section-separator"></span>
-                            <p>Latitude : <?php print_r($_COOKIE['sec_latitude']); ?></p>
-                            <p>Longitude : <?php print_r($_COOKIE['sec_longitude']); ?></p>
-                            <p>Location : <?php print_r($_COOKIE['sec_item_Location']); ?></p>
-                        </div>
-                        
-                        
-                    </div>
-                </section>
-            <?php } ?>
-            
-                    <!-- section end -->
+
             <?php
                 include('include/body_footer.php');
             ?>

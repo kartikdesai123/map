@@ -77,36 +77,36 @@
         }];
 
 
-        for (i = 0; i < locations.length; i++) {
-            marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                icon: locations[i][4],
-                id: i
-            });
-            allMarkers.push(marker);
-            var ib = new InfoBox();
-            google.maps.event.addListener(ib, "domready", function () {
-                cardRaining()
-            });
-            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                return function () {
-                    ib.setOptions(boxOptions);
-                    boxText.innerHTML = locations[i][0];
-                    ib.close();
-                    ib.open(map, marker);
-                    currentInfobox = marker.id;
-                    var latLng = new google.maps.LatLng(locations[i][1], locations[i][2]);
-                    map.panTo(latLng);
-                    map.panBy(0, -180);
-                    google.maps.event.addListener(ib, 'domready', function () {
-                        $('.infoBox-close').click(function (e) {
-                            e.preventDefault();
-                            ib.close();
-                        });
-                    });
-                }
-            })(marker, i));
-        }
+        // for (i = 0; i < locations.length; i++) {
+        //     marker = new google.maps.Marker({
+        //         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        //         icon: locations[i][4],
+        //         id: i
+        //     });
+        //     allMarkers.push(marker);
+        //     var ib = new InfoBox();
+        //     google.maps.event.addListener(ib, "domready", function () {
+        //         cardRaining()
+        //     });
+        //     google.maps.event.addListener(marker, 'click', (function (marker, i) {
+        //         return function () {
+        //             ib.setOptions(boxOptions);
+        //             boxText.innerHTML = locations[i][0];
+        //             ib.close();
+        //             ib.open(map, marker);
+        //             currentInfobox = marker.id;
+        //             var latLng = new google.maps.LatLng(locations[i][1], locations[i][2]);
+        //             map.panTo(latLng);
+        //             map.panBy(0, -180);
+        //             google.maps.event.addListener(ib, 'domready', function () {
+        //                 $('.infoBox-close').click(function (e) {
+        //                     e.preventDefault();
+        //                     ib.close();
+        //                 });
+        //             });
+        //         }
+        //     })(marker, i));
+        // }
         var options = {
             imagePath: 'images/',
             styles: clusterStyles,
